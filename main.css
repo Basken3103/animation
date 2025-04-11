@@ -1,21 +1,56 @@
+body {
+    background-color: #B8860B;
+
+}
+
 .according {
-    width: 200px;
+    width: 300px;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: linear-gradient(145deg, #f0f4f8, #dcebfa);
 }
 
 .according--toggle-button {
-    border: solid 1px #333;
-    padding: 5px 20px;
+    border: none;
+    padding: 15px 20px;
     display: block;
     width: 100%;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 0;
 }
 
 .according--toggle-button:hover {
-    background-color: rgb(233, 219, 139);
+    background-color: #357ab7;
+    transform: scale(1.02);
 }
 
 .according-content {
     overflow: hidden;
     height: 0;
-    background-color: #dcebfa;
-    padding: 0 5px;
+    background-color: #ffffff;
+    padding: 0 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Når content er aktivt (du kan tilføje "active" class med JS) */
+.according-content.active {
+    padding: 15px 20px;
+}
+
+/* Bonus: tilføj en pil der drejer */
+.according--toggle-button::after {
+    content: "▼";
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.according--toggle-button.open::after {
+    transform: rotate(180deg);
 }
